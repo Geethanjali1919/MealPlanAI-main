@@ -28,13 +28,13 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
+          aws-access-key-id: ASIATUYJP7SUHRLWOWKJ
+          aws-secret-access-key: 0hAW8/K3Wr/2XUU021xC62DzrNbi5MVNIvej0XtM
+          aws-region: us-east-1
 
       # Step 5: Initialize, select environment, and deploy
       - name: Deploy to Elastic Beanstalk
         run: |
-          eb init ${{ secrets.APP_NAME }} --platform "Docker" --region ${{ secrets.AWS_REGION }}
-          eb use ${{ secrets.ENV_NAME }}
+          eb init mealplanner --platform "Docker" --region us-east-1
+          eb use mealplanner
           eb deploy
